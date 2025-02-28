@@ -7,7 +7,7 @@ import {
   ListItemText,
   Box,
 } from "@mui/material";
-import Layout from "../components/Layout";
+import Layout from "../components/layout/Layout";
 import { RootState } from "../store/store";
 
 interface User {

@@ -1,15 +1,21 @@
-import { Typography } from "@mui/material";
-import Layout from "../components/Layout";
+import VideoList from "../components/video/VideoList";
+import Layout from "../components/layout/Layout";
+import { Typography, Box, Container } from "@mui/material";
 
 const HomePage = () => {
   return (
     <Layout>
-      <Typography variant="h4" gutterBottom>
-        Welcome to Redux Toolkit Demo Project
-      </Typography>
-      <Typography variant="body1">
-        Register user and show registered users
-      </Typography>
+      <Box sx={{ textAlign: "center", mb: 4 }}>
+        <Typography variant="h4" fontWeight="bold" gutterBottom>
+          🎬 Welcome to Video Sharing Platform
+        </Typography>
+        <Typography variant="body1" color="textSecondary">
+          Enjoy and share amazing videos with the world!
+        </Typography>
+      </Box>
+      <Container maxWidth="xl">
+        <VideoList />
+      </Container>
     </Layout>
   );
 };

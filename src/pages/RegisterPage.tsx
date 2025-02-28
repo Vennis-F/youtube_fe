@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Container, TextField, Button, Typography, Box } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { registerUser } from "../store/userSlice";
-import Layout from "../components/Layout";
+import Layout from "../components/layout/Layout";
 
 const RegisterPage = () => {
   const [username, setUsername] = useState("");
