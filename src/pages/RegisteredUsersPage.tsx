@@ -1,21 +1,33 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { Container, Typography, List, ListItem, ListItemText, Box } from '@mui/material';
-import Layout from '../components/Layout';
+import { useSelector } from "react-redux";
+import {
+  Container,
+  Typography,
+  List,
+  ListItem,
+  ListItemText,
+  Box,
+} from "@mui/material";
+import Layout from "../components/Layout";
+import { RootState } from "../store/store";
+
+interface User {
+  username: string;
+  email: string;
+}
 
 const RegisteredUsersPage = () => {
-  const users = useSelector((state) => state.user.users);
+  const users = useSelector((state: RootState) => state.user.users);
 
   return (
     <Layout>
-      <Container maxWidth="">
+      <Container maxWidth="md">
         <Box mt={4}>
           <Typography variant="h4" component="h1" gutterBottom>
             Registered Users
           </Typography>
           {users.length > 0 ? (
             <List>
-              {users.map((user, index) => (
+              {users.map((user: User, index: number) => (
                 <ListItem key={index}>
                   <ListItemText primary={`${user.username} - ${user.email}`} />
                 </ListItem>

@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import { Container, TextField, Button, Typography, Box } from '@mui/material';
-import { useDispatch } from 'react-redux';
-import { registerUser } from '../store/userSlice';
-import Layout from '../components/Layout';
+import { useState } from "react";
+import { Container, TextField, Button, Typography, Box } from "@mui/material";
+import { useDispatch } from "react-redux";
+import { registerUser } from "../store/userSlice";
+import Layout from "../components/Layout";
 
 const RegisterPage = () => {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const dispatch = useDispatch();
 
   const handleRegister = () => {
     dispatch(registerUser({ username, email }));
-    setUsername('');
-    setEmail('');
+    setUsername("");
+    setEmail("");
   };
 
   return (

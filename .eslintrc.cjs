@@ -15,7 +15,4 @@ module.exports = {
       { allowConstantExport: true },
     ],
   },
-  compilerOptions: {
-    skipLibCheck: true,
-  },
 };

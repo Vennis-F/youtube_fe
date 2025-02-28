@@ -1,5 +1,4 @@
-import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography } from "@mui/material";
 
 const Footer = () => {
   return (
@@ -8,14 +7,14 @@ const Footer = () => {
       sx={{
         py: 2,
         px: 2,
-        mt: 'auto',
+        mt: "auto",
         backgroundColor: (theme) => theme.palette.background.paper,
       }}
     >
       <Typography variant="body2" color="textSecondary" align="center">
-        {'© '}
+        {"© "}
         Redux Toolkit {new Date().getFullYear()}
-        {'.'}
+        {"."}
       </Typography>
     </Box>
   );
