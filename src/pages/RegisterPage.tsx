@@ -1,18 +1,15 @@
-import { useState } from "react";
-import { Container, TextField, Button, Typography, Box } from "@mui/material";
-import { useDispatch } from "react-redux";
-import { registerUser } from "../store/userSlice";
+import { Container, Typography, Box } from "@mui/material";
 import Layout from "../components/layout/Layout";
 
+import { useDispatch } from "react-redux";
+import { registerUser } from "../store/userSlice";
+import RegisterForm from "../components/forms/RegisterForm";
+
 const RegisterPage = () => {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
   const dispatch = useDispatch();
 
-  const handleRegister = () => {
-    dispatch(registerUser({ username, email }));
-    setUsername("");
-    setEmail("");
+  const handleRegister = (data: any) => {
+    dispatch(registerUser(data));
   };
 
   return (
@@ -22,28 +19,7 @@ const RegisterPage = () => {
           <Typography variant="h4" component="h1" gutterBottom>
             Register
           </Typography>
-          <TextField
-            fullWidth
-            margin="normal"
-            label="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <TextField
-            fullWidth
-            margin="normal"
-            label="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleRegister}
-            sx={{ mt: 2 }}
-          >
-            Register
-          </Button>
+          <RegisterForm onSubmit={handleRegister} />
         </Box>
       </Container>
     </Layout>
