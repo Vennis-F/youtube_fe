@@ -1,21 +1,42 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Link } from "@mui/material";
 
 const Footer = () => {
   return (
     <Box
       component="footer"
       sx={{
-        py: 2,
+        py: 3,
         px: 2,
         mt: "auto",
-        backgroundColor: (theme) => theme.palette.background.paper,
+        background: "linear-gradient(90deg, #0d47a1, #1976d2)", // Màu gradient đẹp
+        color: "white",
+        textAlign: "center",
       }}
     >
-      <Typography variant="body2" color="textSecondary" align="center">
+      <Typography
+        variant="body2"
+        sx={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}
+      >
         {"© "}
-        Redux Toolkit {new Date().getFullYear()}
-        {"."}
+        {new Date().getFullYear()} RemiTube. All rights reserved.
       </Typography>
+
+      <Box sx={{ mt: 1 }}>
+        <Link
+          href="#"
+          color="inherit"
+          sx={{ mx: 1, fontWeight: "bold", fontSize: "0.9rem" }}
+        >
+          Privacy Policy
+        </Link>
+        <Link
+          href="#"
+          color="inherit"
+          sx={{ mx: 1, fontWeight: "bold", fontSize: "0.9rem" }}
+        >
+          Terms of Use
+        </Link>
+      </Box>
     </Box>
   );
 };
