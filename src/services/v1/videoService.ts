@@ -1,14 +1,8 @@
 import { ApiResponse } from "../../types/api";
+import { Video } from "../../types/video";
 import createApiClient from "../apiClient";
 
 const apiV1 = createApiClient("v1");
-
-export interface Video {
-  id: number;
-  title: string;
-  url: string;
-  createdAt: string;
-}
 
 const videoServiceV1 = {
   fetchVideos: async (): Promise<Video[]> => {
