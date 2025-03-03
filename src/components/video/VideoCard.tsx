@@ -47,7 +47,7 @@ const VideoCard: React.FC<VideoCardProps> = ({ video }) => {
           {video.title}
         </Typography>
         <Typography variant="body2" color="textSecondary">
-          Shared by: <b>{video.sharedBy}</b>
+          Shared by: <b>{video.shared_by}</b>
         </Typography>
 
         <Box sx={{ display: "flex", alignItems: "center", gap: 2, mt: 1 }}>
