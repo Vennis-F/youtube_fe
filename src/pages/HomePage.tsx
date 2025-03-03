@@ -1,6 +1,6 @@
-import VideoList from "../components/video/VideoList";
 import Layout from "../components/layout/Layout";
 import { Typography, Box, Container } from "@mui/material";
+import VideoListContainer from "../components/video/VideoListContainer";
 
 const HomePage = () => {
   return (
@@ -14,7 +14,7 @@ const HomePage = () => {
         </Typography>
       </Box>
       <Container maxWidth="xl">
-        <VideoList />
+        <VideoListContainer />
       </Container>
     </Layout>
   );
