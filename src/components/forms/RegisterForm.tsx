@@ -6,6 +6,10 @@ import CustomTextField from "./CustomTextField";
 import { useState } from "react";
 import apiFactory from "../../services/apiFactory";
 
+type RegisterFormProps = {
+  onSubmit: (data: any) => void;
+};
+
 const schema = yup.object({
   email: yup.string().email("Invalid email").required("Email is required"),
   password: yup
@@ -18,7 +22,7 @@ const schema = yup.object({
     .required("Confirm password is required"),
 });
 
-const RegisterForm = () => {
+const RegisterForm: React.FC<RegisterFormProps> = () => {
   const { control, handleSubmit } = useForm({
     resolver: yupResolver(schema),
   });
